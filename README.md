@@ -12,9 +12,9 @@ Many students have personal, work, and school calendars scattered across differe
 ## JSON Schema
 
 ## Members and Roles
-Shah Opal - Product Owner
-Chris Vu - Scrum Master
-Rohit Vijai - Developer
-Jacob Dice - Developer
+Shah Opal - Product Owner \
+Chris Vu - Scrum Master \
+Rohit Vijai - Developer \
+Jacob Dice - Developer \
 ## Kanban Board
 To stay up to date on current development and tasks, please refer to the Projects tab of Github!
