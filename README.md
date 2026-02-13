@@ -18,19 +18,180 @@ Many students have personal, work, and school calendars scattered across differe
     "definitions": {
         "Studious": {
             "type": "object",
-            "additionalProperties": {},
+            "additionalProperties": false,
+            "properties": {
+                "$id": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "$schema": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "properties": {
+                    "$ref": "#/definitions/StudiousProperties"
+                },
+                "definitions": {
+                    "$ref": "#/definitions/Definitions"
+                }
+            },
+            "required": [
+                "$id",
+                "$schema",
+                "definitions",
+                "description",
+                "properties",
+                "required",
+                "type"
+            ],
+            "title": "Studious"
+        },
+        "Definitions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Event": {
+                    "$ref": "#/definitions/Event"
+                }
+            },
+            "required": [
+                "Event"
+            ],
+            "title": "Definitions"
+        },
+        "Event": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "properties": {
+                    "$ref": "#/definitions/EventProperties"
+                }
+            },
+            "required": [
+                "properties",
+                "required",
+                "type"
+            ],
+            "title": "Event"
+        },
+        "EventProperties": {
+            "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "id": {
-                    "type": "number"
+                    "$ref": "#/definitions/ID"
                 },
-                "name": {
+                "title": {
+                    "$ref": "#/definitions/Name"
+                },
+                "description": {
+                    "$ref": "#/definitions/ID"
+                },
+                "date": {
+                    "$ref": "#/definitions/Date"
+                },
+                "time": {
+                    "$ref": "#/definitions/ID"
+                }
+            },
+            "required": [
+                "date",
+                "description",
+                "id",
+                "time",
+                "title"
+            ],
+            "title": "EventProperties"
+        },
+        "Date": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
                     "type": "string"
                 },
-                "password": {
+                "format": {
                     "type": "string"
+                }
+            },
+            "required": [
+                "format",
+                "type"
+            ],
+            "title": "Date"
+        },
+        "ID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "title": "ID"
+        },
+        "Name": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "minLength": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "minLength",
+                "type"
+            ],
+            "title": "Name"
+        },
+        "StudiousProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/ID"
                 },
                 "username": {
-                    "type": "string"
+                    "$ref": "#/definitions/Name"
+                },
+                "password": {
+                    "$ref": "#/definitions/Name"
+                },
+                "name": {
+                    "$ref": "#/definitions/Name"
                 }
             },
             "required": [
@@ -39,11 +200,11 @@ Many students have personal, work, and school calendars scattered across differe
                 "password",
                 "username"
             ],
-            "title": "Studious",
-            "description": "StudiousUser"
+            "title": "StudiousProperties"
         }
     }
 }
+
 
 ```
 ## Members and Roles
