@@ -11,7 +11,41 @@ Many students have personal, work, and school calendars scattered across differe
 <img width="2816" height="1536" alt="UML Diagram" src="https://github.com/user-attachments/assets/472b1424-f770-4d45-a2cf-3bcecc2467a2" />
 
 ## JSON Schema
+```json
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Studious",
+    "definitions": {
+        "Studious": {
+            "type": "object",
+            "additionalProperties": {},
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "password",
+                "username"
+            ],
+            "title": "Studious",
+            "description": "StudiousUser"
+        }
+    }
+}
 
+```
 ## Members and Roles
 Shah Opal - Product Owner \
 Chris Vu - Scrum Master \
